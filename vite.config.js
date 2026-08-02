@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
     plugins: [react()],
-    base: '/creative-webspot-infotech/',
-});
+    base: mode === "production" ? "/creative-webspot-infotech/" : "/",
+}));
